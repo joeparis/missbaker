@@ -1,8 +1,10 @@
+@import 'utility';
+
 $base-font: 18px;
 $scale-factor: 1.414; /* http://type-scale.com/ Augmented Fourth */
 
 html {
-  font: $base-font/1.35rem 'Suma', Georgia,Times,"Times New Roman",serif;
+  font: #{$base-font}/1.35rem 'Suma', Georgia,Times,"Times New Roman",serif;
 }
 
 body {
@@ -12,13 +14,9 @@ body {
   background-color: white;
 }
 
-h1, h2 {
-  font-family: 'Lato', sans-serif;
-}
-
 @for $heading-level from 1 through 6 {
   h#{$heading-level} {
     font-family: 'Lato', sans-serif;
-    font-size: 24px - 3 * $heading-level;
+    font-size: pow($scale-factor, 4 - $heading-level) * 1em;
   }
 }

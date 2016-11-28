@@ -1,0 +1,17 @@
+/* https://css-tricks.com/snippets/sass/power-function/ */
+@function pow($number, $exponent) {
+  $base-heading-size: 2.827em;
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
